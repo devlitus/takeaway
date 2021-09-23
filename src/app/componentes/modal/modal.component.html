@@ -1,0 +1,30 @@
+<i class="fa fa-cart-plus icon-checkout" aria-hidden="true" (click)="openModal()"></i>
+<div #modal class="md-modal md-effect-1" id="modal">
+  <div class="md-content">
+    <h3>Menu</h3>
+    <div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let plat of plato">
+          <tr>
+            <th>{{plat.nombre}}</th>
+            <td>{{plat.precio}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>TOTAL</th>
+            <td>234 €</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button class="md-close" (click)="closeModal()">Close me!</button>
+    </div>
+  </div>
+</div>
+<div class="md-overlay"></div>

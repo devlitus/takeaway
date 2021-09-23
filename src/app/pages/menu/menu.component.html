@@ -1,0 +1,28 @@
+<!-- Restaurant Menu Section -->
+<div id="restaurant-menu">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Menu</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6"  *ngFor="let categoria of categorias">
+        <div class="menu-section">
+          <h2  class="menu-section-title">Platos {{categoria.categoria}}</h2>
+          <ng-container *ngFor="let plato of platos">
+            <div class="card" *ngIf="plato.id_categoria == categoria.id">
+              <img class="card-img-top" [src]="urlImagen+'/'+plato.imagen" alt="">
+              <div class="card-body">
+                <h4 class="card-title">{{plato.nombre}}</h4>
+                <p class="card-text">{{plato.descripcion}}</p>
+                <span style="cursor:pointer;" (click)="detailPlat(plato.nombre, plato.precio, plato.id, plato.descripcion)">{{plato.precio}} 
+                  <i class="fa fa-eur" aria-hidden="true"></i>&nbsp;
+                  <i class="fa fa-cart-plus" aria-hidden="true"  style="font-size:20px;"></i>
+                </span> 
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

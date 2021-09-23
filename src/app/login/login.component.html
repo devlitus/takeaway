@@ -1,0 +1,58 @@
+<a class="hiddenanchor" id="toregister"></a>
+<a class="hiddenanchor" id="tologin"></a>
+<div id="wrapper">
+	<div #login id="login" class="animate form">
+		<form ngNativeValidate [formGroup]="formLogin" autocomplete="on" (ngSubmit)="getLogin($event)"> 
+			<h1>Iniciar Sesión</h1> 
+			<p> 
+				<label for="username" class="uname" data-icon="u" > Tu Email </label>
+				<input formControlName="email" id="username" name="email" required="" type="text" placeholder="myusername or mymail@mail.com"/>
+			</p>
+			<p> 
+				<label for="password" class="youpasswd" data-icon="p"> Tu Contraseña </label>
+				<input formControlName="password" id="password" name="password" required="	" type="password" placeholder="eg. X8df!90EO" /> 
+			</p>
+			<p class="keeplogin"> 
+				<input formControlName="logincheck" type="checkbox" name="logincheck" id="loginkeeping" value="loginkeeping" /> 
+				<label for="loginkeeping">Recordar</label>
+			</p>
+			<p class="login button"> 
+				<input type="submit" value="Iniciar sesión" /> 
+			</p>
+			<p class="change_link">
+				No eres miembro todavía ?
+				<a class="to_register" (click)="toregister()">Únete a nosotros</a>
+			</p>
+		</form>
+	</div>
+
+	<div #register id="register" class="animate form">
+		<form [formGroup]="formRegister" autocomplete="on" (ngSubmit)="registerUser($event)"> 
+			<h1> Regístrate </h1> 
+			<p> 
+				<label for="usernamesignup" class="uname" data-icon="u">Tu Usuario</label>
+				<input formControlName="usernameReg" id="usernamesignup" name="usernameReg" required="required" type="text" placeholder="mysuperusername690" />
+			</p>
+			<p> 
+				<label for="emailsignup" class="youmail" data-icon="e" > Tu Correo </label>
+				<input formControlName="emailReg" id="emailsignup" name="emailReg" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+			</p>
+			<p> 
+				<label for="passwordsignup" class="youpasswd" data-icon="p">Tu Contraseña </label>
+				<input formControlName="passwordReg" id="passwordsignup" name="passwordReg" required="required" type="password" placeholder="eg. X8df!90EO"/>
+			</p>
+			<p> 
+				<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Porfavor confitma tu contraseña </label>
+				<input formControlName="passRegConf" id="passwordsignup_confirm" name="passRegConf" required="required" type="password" placeholder="eg. X8df!90EO"/>
+			</p>
+			<p class="signin button"> 
+				<input type="submit" value="Registrarse"/> 
+			</p>
+			<p class="change_link">  
+				Ya eres Usuario ?
+				<a class="to_register" (click)="tologin()"> Ve y entra </a>
+			</p>
+		</form>
+	</div>
+	
+</div>

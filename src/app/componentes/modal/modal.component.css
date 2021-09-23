@@ -1,0 +1,7 @@
+@import url('../../../assets/modal/modal.css');
+.icon-checkout {
+	font-size: 25px;
+}
+tbody td, tfoot td {
+	text-align: left;
+}

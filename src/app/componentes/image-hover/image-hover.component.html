@@ -1,0 +1,29 @@
+<!-- Features Section -->
+<div id="features" class="text-center">
+  <div class="container">
+      <div class="section-title">
+          <h2>Nuestras especialidades</h2>
+      </div>
+      <div class="row">
+          <ng-container *ngFor="let plato of platos; let i=index">
+              <div class="col-sx-12 col-sm-4" *ngIf="i < 3">
+                  <div class="features-item" >
+                      <div class="grid">
+                            <figure class="effect-winston">
+                                <img [src]="urlImagen+'/'+plato.imagen" alt="img30"/>
+                                <figcaption>
+                                    <h2>Jolly <span>Winston</span></h2>
+                                    <p>
+                                        <a href="#"><i class="fa fa-fw fa-star-o"></i></a>
+                                        <a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
+                                        <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+                                    </p>
+                                </figcaption>			
+                            </figure>
+                      </div>
+                  </div>
+              </div>
+          </ng-container>
+      </div>
+  </div>
+</div>
