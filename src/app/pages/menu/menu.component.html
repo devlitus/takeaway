@@ -10,7 +10,7 @@
           <h2  class="menu-section-title">Platos {{categoria.categoria}}</h2>
           <ng-container *ngFor="let plato of platos">
             <div class="card" *ngIf="plato.id_categoria == categoria.id">
-              <img class="card-img-top" [src]="urlImagen+'/'+plato.imagen" alt="">
+              <img class="card-img-top" src="{{plato.imagen}}" alt="">
               <div class="card-body">
                 <h4 class="card-title">{{plato.nombre}}</h4>
                 <p class="card-text">{{plato.descripcion}}</p>

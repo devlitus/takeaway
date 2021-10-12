@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Platos } from 'src/app/models/platos';
+import { Dish, Dishes} from 'src/app/models/platos';
 
 @Component({
   selector: 'app-image-hover',
@@ -7,7 +7,7 @@ import { Platos } from 'src/app/models/platos';
   styleUrls: ['./image-hover.component.css']
 })
 export class ImageHoverComponent implements OnInit {
-  @Input() platos: Array<Platos> = [];
+  @Input() platos: Array<Dish> = [];
   @Input() urlImagen: string;
 
   constructor() { }

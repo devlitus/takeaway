@@ -1,10 +1,15 @@
+export interface Dishes {
+    ok:     boolean;
+    dishes: Dish[];
+}
 
-export class Platos {
-    nombre: string;
-    descripcion: string;
-    precio: number;
-    imagen?: string;
-    id?: number;
-    activado?: boolean;
-    id_categoria?: number;
+export interface Dish {
+    id:           string;
+    nombre:       string;
+    descripcion:  string;
+    precio:       string;
+    id_categoria?: string;
+    imagen?:       string;
+    fecha?:        Date;
+    activado?:     string;
 }

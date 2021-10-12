@@ -27,11 +27,11 @@ export class CategoriaService {
       'Algo malo sucedio; Por favor, inténtelo de nuevo más tarde.');
   }
   getCategoria(): Observable<any> {
-    return this.http.get(URL_SERVICE + '/categoria')
+    return this.http.get(`${URL_SERVICE}/categories/list`)
     .pipe(map((res: any) => {
       if (res.ok) {
-        // console.log(res);
-        return res.categoria;
+        console.log(res.categories);
+        return res.categories;
       }
       return res.message;
     }),

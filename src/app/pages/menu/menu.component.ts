@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlatoService } from 'src/app/service/plato.service';
-import { Platos } from 'src/app/models/platos';
+import { Dish, Dishes} from 'src/app/models/platos';
 import { URL_IMAGEN } from 'src/app/config/config';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { Categoria } from 'src/app/models/categoria';
@@ -11,7 +11,7 @@ import { Categoria } from 'src/app/models/categoria';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  platos: Array<Platos> = [];
+  platos: Array<Dish> = [];
   categorias: Array<Categoria> = [];
   urlImagen: string = URL_IMAGEN;
   hidden = true;
@@ -24,7 +24,8 @@ export class MenuComponent implements OnInit {
   }
   showPlat() {
     this.service.getPlatos()
-    .subscribe((res: Platos) => {
+    .subscribe((res: Dish[]) => {
+      console.log(res[0].imagen);
       Object.assign(this.platos, res);
       // console.log(res);
     });
@@ -44,7 +45,7 @@ export class MenuComponent implements OnInit {
     // console.log(image);
   }
   detailPlat(platNombre: any, platPrecio: any, platId: any, platDescripicon: any) {
-    let plat: Platos = {
+    let plat: Dish = {
       nombre: platNombre,
       descripcion: platDescripicon,
       precio: platPrecio,

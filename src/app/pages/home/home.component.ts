@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlatoService } from 'src/app/service/plato.service';
-import { Platos } from 'src/app/models/platos';
+import { Dish } from 'src/app/models/platos';
 import { URL_IMAGEN } from '../../config/config';
 
 
@@ -10,8 +10,8 @@ import { URL_IMAGEN } from '../../config/config';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public platos: Array<Platos> = [];
-  public url_imagen: string = URL_IMAGEN;
+  public platos: Array<Dish> = [];
+  // public url_imagen: string = URL_IMAGEN;
   constructor(public service: PlatoService) { }
 
   ngOnInit() {
@@ -19,8 +19,9 @@ export class HomeComponent implements OnInit {
   }
   showPlatos() {
     this.service.getPlatos()
-    .subscribe((res: Platos) => {
-      Object.assign(this.platos, res);
+    .subscribe((res: Dish[]) => {
+      this.platos = [...res];
+      // Object.assign(this.platos, res);
     });
   }
 }
